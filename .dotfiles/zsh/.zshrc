@@ -1,23 +1,34 @@
-eval "$(oh-my-posh init zsh --config ~/.dotfiles/omp/themes/wip.omp.json)"
+#eval "$(oh-my-posh init zsh --config ~/.dotfiles/omp/themes/wip.omp.json)"
 
 # prompt
-#autoload -U colors && colors
-#P_USER="%F{187}%K{065} %n %k%f"
-#P_DIR="%F{187}%K{066} %1~ %k%f"
-#P_LEAD=$'\n \U2771 '
-#export PROMPT=$P_USER$P_DIR$P_LEAD
+autoload -U colors && colors
+autoload -Uz add-zsh-hook vcs_info
+zstyle ':vcs_info:*' unstagedstr " *"
+zstyle ':vcs_info:*' stagedstr " +"
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' formats "(%b%u%c)"
+add-zsh-hook precmd vcs_info
+P_GIT="%F{7}${vcs_info_msg_0_}%f"
+P_TIME="%F{15} %t %f"
+export RPROMPT=$P_GIT$P_TIME
+P_USER="%F{7}%K{5} %n %k%f"
+P_HOST="%F{7}%K{5} %m %k%f"
+P_DIR="%F{7}%K{6} %~  %k%f"
+P_LEAD=$'\n ❱ '
+export PROMPT="$P_HOST$P_DIR$P_LEAD"
+
 
 # aliases
-alias l='ls -l '
-alias ll='ls -l'
+#alias ls='ls --color=auto' #Linux
+alias ls='ls -G' #MacOS
+alias ll='ls -l '
 alias la='ls -a '
-alias lla='ls -la '
 alias lt='lsd --tree '
 alias g=git
 alias gcm='git commit -m '
 alias zc='$ZDOTDIR/.zshrc '
 alias so='source ' 
-alias ze='~/.zshenv '
+alias ze='$HOME/.zshenv '
 alias n='nvim '
 alias v='vim '
 
@@ -27,6 +38,7 @@ function update_ssh_keys(){
     mv ~/.ssh/known_hosts.new ~/.ssh/known_hosts
 }
 
+autoload -Uz compinit && compinit
 function globalias(){
     zle _expand_alias
     zle expand-word
@@ -67,3 +79,5 @@ setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history
 setopt HIST_VERIFY               # Do not execute immediately upon history expansion.
 setopt APPEND_HISTORY            # append to history file
 setopt HIST_NO_STORE             # Don't store history commands
+
+bash ~/.dotfiles/tty_themes/init_theme.sh

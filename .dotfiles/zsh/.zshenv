@@ -2,7 +2,7 @@
 export PATH=$HOME/.local/bin:$PATH
 
 #dotfiles on path
-export ZDOTDIR=$HOME/.dotfiles/zsh
+export ZDOTDIR="$HOME/.dotfiles/zsh"
 
 #set defaults
 export EDITOR=vim
