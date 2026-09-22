@@ -1,4 +1,5 @@
-#eval "$(oh-my-posh init zsh --config ~/.dotfiles/omp/themes/wip.omp.json)"
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 
 # prompt
 autoload -U colors && colors
@@ -13,7 +14,7 @@ P_TIME="%F{15} %t %f"
 export RPROMPT=$P_GIT$P_TIME
 P_USER="%F{7}%K{5} %n %k%f"
 P_HOST="%F{7}%K{5} %m %k%f"
-P_DIR="%F{7}%K{6} %~  %k%f"
+P_DIR="%F{7}%K{6} %~ %k%f"
 P_LEAD=$'\n ❱ '
 export PROMPT="$P_HOST$P_DIR$P_LEAD"
 

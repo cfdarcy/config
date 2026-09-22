@@ -2,6 +2,6 @@
 !.gitignore
 !/.scripts
 !/.dotfiles
-/.dotfiles/zsh/.*
+/.dotfiles/zsh/*
 !/.dotfiles/zsh/.zshrc
 !/.dotfiles/zsh/.zshenv

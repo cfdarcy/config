@@ -1,8 +1,8 @@
-if has ('delek_dark')
-    colorscheme delek_dark
-else
-    colorscheme delek
-endif
+" Set 'nocompatible' to ward off unexpected things that your distro might
+" have made, as well as sanely reset options when re-sourcing .vimrc
+set nocompatible
+
+colorscheme delek
 
 " Functions
 function! ToggleRelativeLineNumber()
@@ -11,21 +11,17 @@ function! ToggleRelativeLineNumber()
     endif
 endfunction
 
-" Set 'nocompatible' to ward off unexpected things that your distro might
-" have made, as well as sanely reset options when re-sourcing .vimrc
-set nocompatible
-
 set relativenumber
 " Attempt to determine the type of a file based on its name and possibly its
 " contents. Use this to allow intelligent auto-indenting for each filetype,
 " and for plugins that are filetype specific.
 if has('filetype')
-  filetype indent plugin on
+    filetype indent plugin on
 endif
 
 " Enable syntax highlighting
 if has('syntax')
-  syntax on
+    syntax on
 endif
 
 "------------------------------------------------------------
