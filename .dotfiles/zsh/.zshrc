@@ -9,16 +9,16 @@ zstyle ':vcs_info:*' stagedstr " +"
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' formats "(%b%u%c)"
 add-zsh-hook precmd vcs_info
+setopt promptsubst
 NL=$'\n'
-P_GIT="%F{7}${vcs_info_msg_0_}%f"
-P_TIME="%F{15} %t %f"
+P_GIT='%F{7}${vcs_info_msg_0_}%f'
+P_TIME='%F{15} %t %f'
 export RPROMPT=$P_GIT$P_TIME
 P_USER="%F{7}%K{5} %n %k%f"
 P_HOST="%F{7}%K{5} %m %k%f"
 P_DIR="%F{7}%K{6} %~ %k%f"
 P_LEAD=$' ❱ '
 export PROMPT="$NL$P_HOST$P_DIR$NL$P_LEAD"
-setopt promptsubst
 
 # aliases
 #alias ls='ls --color=auto' #Linux
