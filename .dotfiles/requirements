@@ -1,3 +1,5 @@
 tealdeer
 zsh
 fzf
+python3-pylsp
+tree-sitter-cli

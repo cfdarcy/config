@@ -1,3 +1,5 @@
+export XDG_CONFIG_HOME="$HOME/.dotfiles"
+
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
@@ -21,8 +23,8 @@ P_LEAD=$' ❱ '
 export PROMPT="$NL$P_HOST$P_DIR$NL$P_LEAD"
 
 # aliases
-#alias ls='ls --color=auto' #Linux
-alias ls='ls -G' #MacOS
+alias ls='ls --color=auto' #Linux
+#alias ls='ls -G' #MacOS
 alias ll='ls -l '
 alias la='ls -a '
 alias lt='lsd --tree '
@@ -82,4 +84,4 @@ setopt HIST_VERIFY               # Do not execute immediately upon history expan
 setopt APPEND_HISTORY            # append to history file
 setopt HIST_NO_STORE             # Don't store history commands
 
-bash ~/.dotfiles/tty_themes/init_theme.sh
+#bash ~/.dotfiles/tty_themes/init_theme.sh
