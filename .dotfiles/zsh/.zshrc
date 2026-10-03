@@ -1,6 +1,11 @@
 export XDG_CONFIG_HOME="$HOME/.dotfiles"
 
-# Set up fzf key bindings and fuzzy completion
+#pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+
+# fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
 # prompt

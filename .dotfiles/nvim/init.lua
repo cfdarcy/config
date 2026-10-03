@@ -19,6 +19,7 @@ vim.pack.add({
 	{src="https://github.com/numToStr/Comment.nvim"},
 	{src="https://github.com/norcalli/nvim-colorizer.lua"},
 	{src="https://github.com/ibhagwan/fzf-lua"},
+	{src="https://github.com/ellisonleao/gruvbox.nvim"},
 })
 
 vim.lsp.enable({ "pylsp" })
@@ -30,3 +31,6 @@ require("plugins.autopairs")
 require("plugins.comment")
 require("plugins.colorizer")
 require("plugins.fzf-lua")
+
+require("gruvbox").setup()
+vim.cmd.colorscheme("gruvbox")
