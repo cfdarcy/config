@@ -2,6 +2,8 @@
 !.gitignore
 !/.scripts
 !/.dotfiles
+/.dotfiles/bob/*
 /.dotfiles/zsh/*
+/.dotfiles/zsh/.zcompdump
 !/.dotfiles/zsh/.zshrc
 !/.dotfiles/zsh/.zshenv
